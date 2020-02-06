@@ -12,7 +12,7 @@
 
     <title>
         {#  Allows each page title to be set using a variable named 'title’ #}
-        {% block title %}{{ Layout }}{% endblock %}
+        {% block title %}{% endblock %}
     </title>
 </head>
 <body>
@@ -38,6 +38,12 @@
         </form>
     </div>
 </nav>
+
+<!-- Begin page content -->
+<main role="main" class="container-fluid">
+    <!-- Child pages add page specific content here -->
+    {% block content %}{% endblock %}
+</main>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
