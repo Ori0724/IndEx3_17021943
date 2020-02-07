@@ -26,10 +26,10 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="signup.html">Sign Up</a>
+                <a class="nav-link" href="/signup">Sign Up</a>
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
@@ -41,6 +41,17 @@
 
 <!-- Begin page content -->
 <main role="main" class="container-fluid">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-info">
+                <ul class="list-unstyled">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    {% endwith %}
     <!-- Child pages add page specific content here -->
     {% block content %}{% endblock %}
 </main>
